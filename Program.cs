@@ -1,57 +1,47 @@
-﻿using System;
+﻿using System.ComponentModel.Design;
 
-namespace SwitchCalculator
+namespace SwitchBetweenNumber
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("sisesta esimene number");
-            //loeme kasutaja sisendit ja see peab olema float andmetüüp
+         //esimene koondtulemus puhul on number vahemikus 
+         //0 kuni 100,
+         //teise puhul 101 kuni 200 ja 
+         //kolmanda puhul 201 kuni 300
+         //kasutada switchi
+         string input = Console.ReadLine();
+            
+            int number = 150;
 
-            //konsool kirjutab, et sisesta teine number
-            //loeme kasutaja sisendit ja see peab olema float andmeetüüp
-            //mõlemal juhul tuleeb float ära parsida
-            float Firstnumber = float.Parse(Console.ReadLine());
-            Console.WriteLine(1);
 
-            float Secondnumber = float.Parse(Console.ReadLine());
-            Console.WriteLine(2);
+            int range = number / 100;
+            switch (range) 
+            { 
+             
+                case >= 0 and <= 100:              
+                 Console.WriteLine("0 kuni 100");               
+                break;
+                
+                
+                
+                case >= 101 and <= 200:               
+                Console.WriteLine("101 kuni 200");                
+                break;
 
-            Console.WriteLine("Esimene number" + Firstnumber);
-            Console.WriteLine("Teine number" + Secondnumber);
 
-            //konsool kirjutab, et vali tehe:  +,-,*,/
-            Console.WriteLine("Vali tehe: +,-,*,/");
-            string input = Console.ReadLine();
 
-            //kasutate switchi, et teha valik kasutraja sisendi põhjal
+                case >= 201 and <= 300:              
+                Console.WriteLine("201 kuni 300");                
+                break;
 
-            switch (input)
-            {
-                case "+":
-                    Console.WriteLine($"Tulemus:{Firstnumber + Secondnumber}");
-                    break;
-                case "-":
-                    Console.WriteLine($"Tulemus:{Firstnumber - Secondnumber}");
-                    break;
-                case "*":
-                    Console.WriteLine($"Tulemus:{Firstnumber * Secondnumber}");
-                    break;
-                case "/":
-                    if (Secondnumber == 0)
-                    {
-                        Console.WriteLine("Nulliga jagamine ei ole lubatud");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Tulemus:{Firstnumber / Secondnumber}");
-                    }  
-                        break;
-
+                
+                
+                
                 default:
-                    Console.WriteLine("Teha pole lubatud");
-                    break;
+                Console.WriteLine("ei ole");
+                break;
 
 
 
